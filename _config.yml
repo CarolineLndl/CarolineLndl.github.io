@@ -1,7 +1,7 @@
 title: Caroline Landelle
 logo: /assets/img/Caroline_emoji.jpg
 description: Website in creation
-show_downloads: true
+show_downloads: False
 google_analytics:
 theme: jekyll-theme-minimal
 
