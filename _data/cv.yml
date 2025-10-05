@@ -1,0 +1,82 @@
+- title: Caroline Landelle
+  type: map
+  contents:
+    - name: Email
+      value: caroline.landelle@mcgill.ca
+
+
+- title: Cursus
+type: time_table
+  contents:
+    - institution: "The Neuro, Montreal Neurological Institute, McGill University, Montreal, QC",
+      url: "https://www.mcgill.ca/neuro/",
+      Supervision: "Julien Doyon",
+      Position: "Postdoctoral Researcher",
+      Date: "2019 - today"
+
+    - institution: "Laboratoire de Neurosciences Sensorielles et Intégratives, Aix-Marseille University, 7260, Marseille, France",
+      url: "https://lnc.univ-amu.fr/",
+      Supervision: "Anne Kavounoudias",
+      Position: "PhD",
+      Date: "2015 - 2019"
+
+    - institution: "Institut des Neurosciences de la Timone, Aix-Marseille University, CNRS 7289, Marseille, France",
+      url: "https://int.univ-amu.fr/",
+      Supervision: "Frédéric Danion",
+      Position: "Master",
+      Date: "2015"
+
+- title: Grants
+type: time_table
+  contents:
+    - title: "Postdoctoral and research fellowship",
+      date: "2023-2026",
+      awarder: "Canadian Institutes of Health Research (CIHR)",
+      Project: "Using simultaneous brain and spinal cord fMRI to parse the changes in sensorimotor integration induced by Parkinson's disease from those associated with non-pathological aging"
+
+    - title: "Postdoctoral fellowship",
+      date: "2021-2024",
+      awarder: "Fédération de Recherche du Québec en Santé  (FRQS)",
+      Project: "Neural bases of the motor learning: from neurophysiology to simultaneous brain/spinal cord fMRI"
+
+    - title: "PhD extension",
+      date: "2019",
+      awarder: "A*Midex, Aix-Marseille University Innitiative of Excellence"
+
+
+- title: Teaching and invited Workshops
+type: time_table
+  contents:
+    - date: "Oct 2025",
+      Workshop: "Spinal cord workshop",
+      Title: "Exploring the human sensorimotor pathways using spinal cord functional MRI",
+      University: "Aix-Marseille University, Marseille, France",
+
+
+
+
+
+
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Topic 1.
+#       items: 
+#         - Description 1.
+#         - Description 2.
+#     - title: Topic 2.
+#       items:
+#         - Description 1.
+#         - Description 2.
+
+# - title: Other Interests
+#   type: list
+#   contents:
+#     - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+
+# - title: Open Source Projects
+#   type: time_table
+#   contents:
+#     - title: 
+#       year: 
+#       description: 
