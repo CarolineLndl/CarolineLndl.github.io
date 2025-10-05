@@ -20,3 +20,16 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+.bio {
+  display: flex;           /* arrange image and text side by side */
+  align-items: flex-start; /* align top of image and text */
+  gap: 20px;               /* space between image and text */
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;            /* fixed square container */
+  object-fit: cover;        /* crops image to fill square without distortion */
+  border-radius: 0;         /* keeps it square */
+}
