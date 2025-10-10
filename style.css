@@ -6,10 +6,18 @@ body {
   padding: 20px;
 }
 
-header, footer {
+header{
   text-align: center;
   margin-bottom: 20px;
 }
+
+footer {
+    color:#888686;
+    font-size: 0.6em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 nav a {
   margin: 0 10px;
@@ -28,13 +36,15 @@ nav a:hover {
 }
 
 .profile-photo {
-  width: 200px;
-  height: 200px;            /* fixed square container */
-  object-fit: cover;        /* crops image to fill square without distortion */
-  border-radius: 0;         /* keeps it square */
+    flex-shrink: 0;          /* prevent image from shrinking */
+  width: 200px;            /* fixed width for image */
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 6px;
+  
 }
 
-h1, h2 {
+h1,h2 {
     color: #468188;
 }
 
@@ -45,13 +55,32 @@ a {
 
 .section {
     margin-bottom: 40px;
+    text-align: left;   /* ✅ forces section titles and contents to align left */
 }
+
+/* Style for section titles like 🏅 Grants */
+.section h2 {
+  background-color: #468188;
+  color: #fff;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0px 15px;
+  border-radius: 0 15px 15px 0;
+  display: block;              /* ⬅ makes it full width */
+  width: 100%;                 /* ⬅ ensures it fills the container */
+  text-align: left;
+  margin: 0 0 20px 0;
+  box-sizing: border-box;      /* keep padding inside the width */
+}
+
 
 /* Timeline style */
 .timeline {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 
 .item {
@@ -63,7 +92,7 @@ a {
 .item-date {
     flex: 0 0 100px;
     font-weight: bold;
-    color: #555;
+    color: #468188;
 }
 
 .item-content {
@@ -82,8 +111,6 @@ a {
 }
 
 /* === TIMELINE STYLE FOR PUBLICATIONS === */
-
-/* Timeline container */
 #publications {
   position: relative;
   max-width: 1000px;
@@ -91,20 +118,6 @@ a {
   padding: 40px 0;
 }
 
-/* Vertical line in the center */
-#publications::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 4px;
-  background-color: #468188;
-  transform: translateX(-50%);
-  z-index: 0;
-}
-
-/* Timeline items */
 .publication-list {
   position: relative;
   list-style: none;
@@ -112,7 +125,6 @@ a {
   margin: 0;
 }
 
-/* Vertical timeline line in the center */
 .publication-list::before {
   content: '';
   position: absolute;
@@ -132,7 +144,6 @@ a {
   padding: 10px;
 }
 
-/* Left side (odd) and right side (even) alignment */
 .publication-item:nth-child(odd) {
   left: -7.8%;
   text-align: right;
@@ -143,12 +154,12 @@ a {
   text-align: left;
 }
 
-/* Circle marker on the timeline */
+/* Circle marker */
 .publication-item::after {
   content: '';
   position: absolute;
-  top: 50px; /* vertical alignment of circle */
-  right: -50px; /* for left side items */
+  top: 50px;
+  right: -50px;
   transform: translateX(50%);
   width: 14px;
   height: 14px;
@@ -158,16 +169,11 @@ a {
   z-index: 2;
 }
 
-/* Adjust circle position for right-side items */
 .publication-item:nth-child(even)::after {
   left: -50px;
   right: auto;
   transform: translateX(-50%);
 }
-
-
-/* Date bubble on the center line */
-
 
 .publication-date {
   position: absolute;
@@ -187,19 +193,14 @@ a {
   z-index: 1;
 }
 
-/* Date on the RIGHT side for left publications */
 .publication-item:nth-child(odd) .publication-date {
-  right: -120px; /* pushes to the opposite side of content */
+  right: -120px;
 }
 
-/* Date on the LEFT side for right publications */
 .publication-item:nth-child(even) .publication-date {
-  left: -120px; /* pushes to the opposite side of content */
+  left: -120px;
 }
 
-
-
-/* Content box */
 .publication-content {
   background-color: rgb(246, 238, 230);
   padding: 10px 15px;
@@ -211,7 +212,6 @@ a {
   max-width: 90%;
 }
 
-/* Publication details */
 .publication-title {
   font-weight: bold;
   font-size: 0.9em;
@@ -232,7 +232,6 @@ a {
   color: #555;
 }
 
-/* DOI link */
 .publication-doi {
   display: inline-block;
   margin-top: 3px;
@@ -247,7 +246,7 @@ a {
   border-radius: 3px;
 }
 
-/* Responsive: single column on small screens */
+/* Responsive */
 @media screen and (max-width: 768px) {
   #publications::before {
     left: 20px;
@@ -268,3 +267,113 @@ a {
   }
 }
 
+
+.what-section {
+  display: flex;           /* keeps image and text side by side */
+  align-items: flex-start; /* aligns text with top of image */
+  gap: 15px;               /* space between image and text */
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.what-image {
+  flex-shrink: 0;          /* prevent image from shrinking */
+  width: 160px;            /* fixed width for image */
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.questions {
+  flex: 1;                 /* text takes remaining space */
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.questions p {
+  margin: 6px 0;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .what-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-image {
+    width: 80%;
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+
+  .questions {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.how-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.how-image {
+  flex-shrink: 0;
+  width: 160px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.methods {
+  flex: 1;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.methods p {
+  margin: 6px 0;
+}
+
+.methods-list li {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .how-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-image {
+    width: 80%;
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+
+  .methods {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+.section-title {
+  background-color: #468188;
+  color: #fff;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0px 10px;
+  border-radius: 0 15px 15px 0;
+  display: block;              /* ⬅ makes it full width */
+  width: 100%;                 /* ⬅ ensures it fills the container */
+  text-align: left;
+  margin: 0 0 20px 0;
+  box-sizing: border-box;      /* keep padding inside the width */
+}
