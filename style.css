@@ -81,91 +81,190 @@ a {
     margin-bottom: 6px;
 }
 
-/* ===================== */
-/* Publications Section  */
-/* ===================== */
+/* === TIMELINE STYLE FOR PUBLICATIONS === */
+
+/* Timeline container */
 #publications {
-    margin-bottom: 40px;
+  position: relative;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 0;
 }
 
-#publications h2 {
-    color: #2c3e50;
-    margin-bottom: 15px;
+/* Vertical line in the center */
+#publications::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #468188;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
-
-/* Publication list container */
+/* Timeline items */
 .publication-list {
-    list-style: none; 
-    padding-left: 0;
-    margin: 0;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Individual publication item */
+/* Vertical timeline line in the center */
+.publication-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 100%;
+  background-color: #468188;
+  z-index: 0;
+}
+
 .publication-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px; /* small space between date and content */
-    margin-bottom: 15px;
-    padding: 10px 10px;
+  position: relative;
+  width: 50%;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 
-/* Date box on the left */
+/* Left side (odd) and right side (even) alignment */
+.publication-item:nth-child(odd) {
+  left: -7.8%;
+  text-align: right;
+}
+
+.publication-item:nth-child(even) {
+  left: 55.5%;
+  text-align: left;
+}
+
+/* Circle marker on the timeline */
+.publication-item::after {
+  content: '';
+  position: absolute;
+  top: 50px; /* vertical alignment of circle */
+  right: -50px; /* for left side items */
+  transform: translateX(50%);
+  width: 14px;
+  height: 14px;
+  background-color: #468188;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Adjust circle position for right-side items */
+.publication-item:nth-child(even)::after {
+  left: -50px;
+  right: auto;
+  transform: translateX(-50%);
+}
+
+
+/* Date bubble on the center line */
+
+
 .publication-date {
-    flex: 0 0 40px; 
-    font-weight: bold;
-    font-size: 0.8em;
-    color: #468188;
-    background-color: #b2d9dd;
-    padding: 2px 4px;
-    border-radius: 5px;
-    text-align: center;
+  position: absolute;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #b2d9dd;
+  color: #468188;
+  font-weight: bold;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-/* Publication content on the right */
+/* Date on the RIGHT side for left publications */
+.publication-item:nth-child(odd) .publication-date {
+  right: -120px; /* pushes to the opposite side of content */
+}
+
+/* Date on the LEFT side for right publications */
+.publication-item:nth-child(even) .publication-date {
+  left: -120px; /* pushes to the opposite side of content */
+}
+
+
+
+/* Content box */
 .publication-content {
-    flex: 1;
-    background-color: rgb(246, 238, 230);
-    padding: 4px 6px;
-    border-radius: 5px;
-    gap: 2px;           /* space between title / authors / journal */
+  background-color: rgb(246, 238, 230);
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  max-width: 90%;
 }
 
+/* Publication details */
 .publication-title {
-    font-weight: bold;
-    font-size: 0.8em;
-    margin-bottom: 1px;
-    color: #30494cff;
-    margin-bottom: 0px;  /* reduced from 2px */
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 3px 0;
+  color: #30494c;
 }
 
 .publication-authors {
-    color: #555;
-    font-size: 0.6em;
-    margin-bottom: 0px;
+  font-size: 0.8em;
+  margin: 2px 0;
+  color: #555;
 }
 
 .publication-journal {
-    font-style: italic;
-    color: #555;
-    font-size: 0.7em;
-    margin-bottom: 1px;
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 2px 0;
+  color: #555;
 }
 
-/* DOI links */
+/* DOI link */
 .publication-doi {
-    display: inline-block;
-    margin-top: 1px;
-    font-size: 0.6em;
-    color: #ecab74ff; 
-    text-decoration: none;
-    background-color: rgb(246, 238, 230);
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 0.75em;
+  color: #ecab74;
+  text-decoration: none;
 }
 
 .publication-doi:hover {
-    background-color: #d6e4f0;
-    text-decoration: underline;
+  text-decoration: underline;
+  background-color: #d6e4f0;
+  border-radius: 3px;
 }
+
+/* Responsive: single column on small screens */
+@media screen and (max-width: 768px) {
+  #publications::before {
+    left: 20px;
+  }
+
+  .publication-item {
+    width: 100%;
+    left: 0 !important;
+    text-align: left !important;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  .publication-date {
+    left: 20px;
+    transform: none;
+  }
+}
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Timeline Example</title>
+  <style>
+    /* Timeline container */
+    #timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px 0;
+    }
+
+    #timeline h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Vertical line */
+    #timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #b2d9dd;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+      z-index: 0;
+    }
+
+    /* Timeline item */
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 4px solid #468188;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item.left {
+      left: 0;
+    }
+
+    .timeline-item.left::after {
+      right: -10px;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+    }
+
+    .timeline-item.right::after {
+      left: -10px;
+    }
+
+    /* Content box */
+    .timeline-content {
+      background-color: rgb(246, 238, 230);
+      padding: 10px 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-content h3 {
+      margin-top: 0;
+      color: #30494c;
+    }
+
+    /* Responsive layout */
+    @media screen and (max-width: 768px) {
+      #timeline::after {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 25px;
+      }
+
+      .timeline-item.right {
+        left: 0;
+      }
+
+      .timeline-item::after,
+      .timeline-item.right::after {
+        left: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section id="timeline">
+  <h2>📚 Publications Timeline</h2>
+
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h3>2025</h3>
+      <p>First publication example — left side.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right">
+    <div class="timeline-content">
+      <h3>2024</h3>
+      <p>Second publication example — right side.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left">
+    <div class="timeline-content">
+      <h3>2023</h3>
+      <p>Third publication example — left side again.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
