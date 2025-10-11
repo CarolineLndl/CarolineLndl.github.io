@@ -1,3 +1,10 @@
+.page-container {
+  max-width: 700px;   /* or 700px, depending on how small you want */
+  margin: 0 auto;
+  transform: scale(0.95); /* optional fine-tuning */
+  transform-origin: top center;
+}
+
 body {
   font-family: Arial, sans-serif;
   max-width: 900px;
@@ -286,7 +293,7 @@ a {
 
 .questions {
   flex: 1;                 /* text takes remaining space */
-  font-size: 1.2em;
+  font-size: 0.8em;
   line-height: 1.6;
 }
 
@@ -309,7 +316,7 @@ a {
 
   .questions {
     width: 100%;
-    font-size: 1.2em;
+    font-size: 0.8em;
     text-align: left;
   }
 }
@@ -319,7 +326,7 @@ a {
   align-items: flex-start;
   gap: 15px;
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 0.8em;
   margin-bottom: 30px;
 }
 

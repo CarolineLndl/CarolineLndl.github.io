@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://carolinelndl.github.io/sitemap.xml
+Sitemap: Sitemap: https://carolinelndl.github.io/sitemap.xml
