@@ -435,13 +435,12 @@ a {
     margin-bottom: 18px;
 }
 
-.project img {
-    position: relative;
-    left: 40px;
-    border-radius: 0px;
-    width: 70%;
-     height: auto;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.project-image {
+    display: block;
+    width: 500px;
+    height: 150px;
+    object-fit: contain;
+    margin: 20px auto;
 }
 
 .project details {
